@@ -61,7 +61,7 @@ class userQueue {
         		return "The position selected does not exists";
     		}
     
-    		array_splice($_queue, min($to_position-1, 0), 0, array_splice($_queue, $from_position, 1));
+    		array_splice($_queue, (($to_position-1 > 0) ?: 0), 0, array_splice($_queue, $from_position, 1));
     		return $this->_queue;
 	}
 	
