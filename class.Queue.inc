@@ -57,25 +57,12 @@ class userQueue {
 	//FIX
 	public function move($from_position, $to_position) {
 		
-		if(!isset($this->_queue[$from_position])) {
-			return "The position selected does not exists";
-		}
-		
-		$temp_queue = [];
-		$element_to_move = $this->_queue[$from_position];
-		for ($i = 0; $i < $this->size(); $i++) {
-			if($from_position == $i ) {
-				continue;
-			} elseif ($to_position == $i) {
-				array_push($temp_queue, $element_to_move);
-			}
-			array_push($temp_queue, $this->_queue[$i]);
-		}
-		//$this->_queue = array();
-		$this->_queue = $temp_queue;
-	
-		//maybe using array_splice
-		
+    		if (!isset($_queue[$from_position])) {
+        		return "The position selected does not exists";
+    		}
+    
+    		array_splice($this->_queue, $to_position, 0, array_splice($this->_queue, $from_position, 1));
+    		return $this->_queue;
 	}
 	
 	public function swap($position1, $position2) {
