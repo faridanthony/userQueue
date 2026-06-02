@@ -10,6 +10,14 @@ class userQueue {
 	public function queueIsEmpty() {
 		return empty($this->_queue);
 	}
+
+	/**
+	 * Alias for queueIsEmpty().
+	 * Returns true if the queue contains no elements, false otherwise.
+	 */
+	public function isEmpty() {
+		return $this->queueIsEmpty();
+	}
 	
     //Utils
 	public function size() {
