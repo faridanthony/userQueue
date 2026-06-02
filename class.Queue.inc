@@ -16,6 +16,14 @@ class userQueue {
 		return count($this->_queue);
 	}
 
+	/**
+	 * Returns a shallow copy of the internal queue as an array.
+	 * Callers may inspect the contents without affecting queue state.
+	 */
+	public function toArray() {
+		return array_values($this->_queue);
+	}
+
 	public function front() { //front
 		return end($this->_queue);
 	}
