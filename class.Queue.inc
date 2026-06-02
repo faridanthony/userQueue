@@ -3,7 +3,16 @@ class userQueue {
 
 	private $_queue = array();
 
+	/**
+	 * Remove and return the front item of the queue.
+	 * Returns null (with no warning) when the queue is empty.
+	 *
+	 * @return mixed|null The popped value, or null if the queue is empty.
+	 */
 	public function pop() {
+		if (empty($this->_queue)) {
+			return null;
+		}
 		return array_pop($this->_queue);
 	}
 
