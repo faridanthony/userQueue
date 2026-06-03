@@ -12,6 +12,12 @@ class userQueue {
 	}
 	
     //Utils
+
+	/**
+	 * Returns the number of items currently in the queue.
+	 *
+	 * @return int
+	 */
 	public function size() {
 		return count($this->_queue);
 	}
